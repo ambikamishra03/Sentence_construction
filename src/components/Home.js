@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const FrontPage = () => {
+
+const Home = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () =>{
+    navigate('/quize');
+  }
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
       <div className="text-center mb-10">
@@ -23,7 +30,7 @@ const FrontPage = () => {
 
       <button 
       className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-all shadow-md text-lg font-medium"
-        
+        onClick={handleNavigate}
       >
         Start
       </button>
@@ -31,4 +38,4 @@ const FrontPage = () => {
   )
 }
 
-export default FrontPage
+export default Home
