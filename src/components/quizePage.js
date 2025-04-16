@@ -11,7 +11,7 @@ const QuizePage = () => {
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(1);
   const [timeLeft, setTimeLeft] = useState(60);
-  const [isCompleted, setIsCompleted] = useState(false); // check if sentence is fully filled
+  const [isCompleted, setIsCompleted] = useState(false); 
 
   const blanksCount = (sentences[index].match(/______+/g) || []).length;
 
@@ -62,6 +62,9 @@ const QuizePage = () => {
     navigate("/");
   };
 
+
+  // timer 
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -80,7 +83,7 @@ const QuizePage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 px-4">
       <h2 className="text-5xl font-bold text-gray-600 mb-4">Round {round} / 5</h2>
-      <p className="text-xl text-red-500 font-bold mb-2">⏳ Time left: {timeLeft}s</p>
+      <p className="text-xl text-red-500 font-bold mb-2">⏳ Time left: {timeLeft}sec</p>
 
       <div className="max-w-2xl bg-white p-6 rounded-lg shadow-md text-center">
         <p className="text-lg text-gray-800 mb-4">{getDisplayedSentence()}</p>
