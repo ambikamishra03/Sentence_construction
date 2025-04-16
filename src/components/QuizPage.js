@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sentences, removedWords, filledSentences } from "../assets/data";
 import { useNavigate } from "react-router-dom";
 
-const QuizePage = () => {
+const QuizPage = () => {
   const navigate = useNavigate();
   const getRandomIndex = () => Math.floor(Math.random() * sentences.length);
 
@@ -83,7 +83,7 @@ const QuizePage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 px-4">
       <h2 className="text-5xl font-bold text-gray-600 mb-4">Round {round} / 5</h2>
-      <p className="text-xl text-red-500 font-bold mb-2">⏳ Time left: {timeLeft}sec</p>
+      <p className="text-xl text-red-500 font-bold mb-2">⏳ Time left: {timeLeft}s</p>
 
       <div className="max-w-2xl bg-white p-6 rounded-lg shadow-md text-center">
         <p className="text-lg text-gray-800 mb-4">{getDisplayedSentence()}</p>
@@ -119,7 +119,7 @@ const QuizePage = () => {
             onClick={handleStartAgain}
             className="bg-red-600 text-white px-6 py-2 rounded-full m-2 hover:bg-red-700"
           >
-            Start Again
+            Start again
           </button>
         </div>
       </div>
@@ -127,4 +127,4 @@ const QuizePage = () => {
   );
 };
 
-export default QuizePage;
+export default QuizPage;
